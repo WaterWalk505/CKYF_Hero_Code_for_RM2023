@@ -1,0 +1,11 @@
+#ifndef _CHASSIS_MOTOR
+#define _CHASSIS_MOTOR
+#include "struct_typedef.h"
+
+
+
+void chassis_motor_init(void);
+void calculate_chassis_motor_target_current_with_target_speed(void);
+void calculate_chassis_follow_gimbal_motor_speed_with_target_ecd(void);
+void calculate_chassis_motor_target_speed_with_kinematics_solution(int16_t chassis_target_forward_speed_x, int16_t chassis_target_traverse_speed_y,int16_t chassis_target_rotation_speed_z);
+#endif
