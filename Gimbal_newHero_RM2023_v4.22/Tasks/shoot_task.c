@@ -25,8 +25,8 @@ float FRIC_SPEED_16=4000;
 #define fric_0m 1000//1500
 //#define fric_10m 1400//1500
 //#define fric_16m 1540//1510
-uint16_t fric_10m=1475;//1400
-uint16_t fric_14m=1475;//1530,1475稳定14.0±0.1，1480稳定14.4±0.2
+uint16_t fric_10m=2000;//1475
+uint16_t fric_14m=2000;//1530,1475稳定14.0±0.1，1480稳定14.4±0.2
 uint16_t fric_15m=1500;//弹速还没校过，先拿这个用用
 int16_t fric_test=1000;
 uint16_t fric_target=1475;
@@ -482,8 +482,12 @@ void fric_rotate_by_PWM(uint16_t fric_target_speed)
 		fric_soft_start_cnt_by_PWM=0;
 		}
 		
-		TIM1->CCR1=fric_ladder_speed;
-		TIM1->CCR2=fric_ladder_speed;
+//		TIM1->CCR1=fric_ladder_speed;
+//		TIM1->CCR2=fric_ladder_speed;
+		
+		TIM1->CCR1=fric_speed;
+		TIM1->CCR2=fric_speed;
+
 
 }
 
